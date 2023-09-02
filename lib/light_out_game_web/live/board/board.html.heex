@@ -1,0 +1,7 @@
+<div class="flex flex-col max-w-lg mx-auto">
+  <div class="grid grid-rows-5 grid-cols-5 gap-2 mb-4">
+    <%= for {{x, y}, value} <- @grid do %>
+      <.light value={value} x={x} y={y} />
+    <% end %>
+  </div>
+</div>
