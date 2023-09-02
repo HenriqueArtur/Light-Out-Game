@@ -85,6 +85,7 @@ defmodule LightOutGameWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import LightOutGameWeb.CoreComponents
+      import LightOutGameWeb.CallButton
       import LightOutGameWeb.Gettext
 
       # Shortcut for generating JS commands
