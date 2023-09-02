@@ -30,6 +30,31 @@ topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
 window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
 window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 
+function shootConfetti() {
+  const colors = ["#00bcd2", "#e0105e", "#fcf801"];
+  confetti({
+    particleCount: 100,
+    angle: 60,
+    spreed: 55,
+    origin: { x: 0 },
+    colors,
+  });
+  confetti({
+    particleCount: 100,
+    angle: 120,
+    spreed: 55,
+    origin: { x: 1 },
+    colors,
+  });
+}
+
+window.addEventListener("phx:game-over", (event) => {
+  const { win } = event.detail;
+  if (win) {
+    shootConfetti();
+  }
+});
+
 // connect if there are any LiveViews on the page
 liveSocket.connect()
 
