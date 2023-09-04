@@ -18,7 +18,8 @@ defmodule LightOutGameWeb.Router do
     pipe_through :browser
 
     # get "/", PageController, :home
-    live "/", Board
+    live "/", Levels
+    live "/:level_id", Board
   end
 
   # Other scopes may use custom stacks.

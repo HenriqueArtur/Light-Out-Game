@@ -1,0 +1,9 @@
+<div class="grid grid-rows-5 grid-cols-5 gap-2 mb-4">
+  <%= for level <- @levels do %>
+    <.link
+      patch={~p"/#{level}"}
+      class="block h-20 px-4 py-6 text-center text-lg border rounded bg-yellow-300 hover:bg-yellow-600">
+      <%= level %>
+    </.link>
+  <% end %>
+</div>
