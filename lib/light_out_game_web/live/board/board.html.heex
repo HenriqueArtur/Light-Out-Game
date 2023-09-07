@@ -1,8 +1,19 @@
+<h2 class="text-3xl text-center my-4">Level <%= @level %></h2>
 <div class="flex flex-col max-w-lg mx-auto">
   <div class="grid grid-rows-5 grid-cols-5 gap-2 mb-4">
     <%= for {{x, y}, value} <- @grid do %>
       <.light value={value} x={x} y={y} />
     <% end %>
   </div>
-  <p :if={@win} class="text-3xl text-center" >You won!</p>
 </div>
+<div class="flex flex-col max-w-lg mx-auto">
+  <div class="grid grid-cols-4 gap-2">
+    <.icon_button icon="hero-chevron-left" action="prev" disabled={@level == 1} />
+    <.icon_button icon="hero-chevron-right" action="next" disabled={@level == @levels_qnt} />
+    <.icon_button icon="hero-arrow-path" action="reset" />
+    <.icon_button icon="hero-home" action="to-home" />
+  </div>
+</div>
+<.win modal_id="modal" show={@win}/>
+<%!-- <.modal id="modal" show={@win}>
+</.modal> --%>
