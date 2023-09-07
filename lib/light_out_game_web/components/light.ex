@@ -1,6 +1,5 @@
 defmodule LightOutGameWeb.Light do
   use Phoenix.Component
-  import LightOutGameWeb.CoreComponents
 
   def light(assigns) do
     ~H"""
