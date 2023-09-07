@@ -9,10 +9,10 @@ defmodule LightOutGameWeb.IconButton do
   def icon_button(assigns) do
     ~H"""
     <button
-      class="block px-4 py-4 text-center border rounded bg-stone-200 hover:bg-stone-400 disabled:opacity-25"
+      class="block px-4 py-4 text-center border rounded bg-stone-400 hover:bg-stone-500 disabled:opacity-25"
       disabled={@disabled}
       phx-click={"#{@action}"}>
-      <.icon name={"#{@icon}"} class="h-6 w-6 border-black" />
+      <.icon name={"#{@icon}"} class="h-6 w-6 border-black text-white" />
     </button>
     """
   end

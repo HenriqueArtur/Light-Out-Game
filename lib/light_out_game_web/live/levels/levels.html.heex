@@ -1,9 +1,12 @@
-<div class="grid grid-rows-5 grid-cols-5 gap-1 mb-4">
-  <%= for level <- @levels do %>
-    <.link
-      patch={~p"/#{level}"}
-      class="block h-20 px-4 py-6 text-center text-lg border rounded bg-yellow-300 hover:bg-yellow-600">
-      <%= level %>
-    </.link>
-  <% end %>
+<h2 class="text-3xl text-center my-4">Levels</h2>
+<div class="flex flex-col max-w-lg mx-auto">
+  <div class="grid grid-rows-5 grid-cols-5 gap-1 mb-4">
+    <%= for level <- @levels do %>
+      <.link
+        patch={~p"/#{level}"}
+        class="block px-4 py-6 text-center text-lg border rounded bg-stone-400 hover:bg-stone-500 text-white">
+        <%= level %>
+      </.link>
+    <% end %>
+  </div>
 </div>
